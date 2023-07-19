@@ -9,10 +9,10 @@ import okhttp3.Response;
 import java.io.IOException;
 
 public class AuthController {
-    public void postSignUp (SignUpIn signUp) throws IOException {
+    public void postSignUp (SignUpIn signUpIn) throws IOException {
         Gson gson = new Gson();
 
-        RequestBody body = RequestBody.create(gson.toJson(signUp).getBytes());
+        RequestBody body = RequestBody.create(gson.toJson(signUpIn).getBytes());
         Request request = new Request.Builder()
                 .url("http://127.0.0.1:8080/api/auth/signup")
                 .post(body)
@@ -23,10 +23,10 @@ public class AuthController {
         System.out.println(response.code());
         System.out.println(response.body().string());
     }
-    public void postSignIn (SignUpIn signIn) throws IOException {
+    public void postSignIn (SignUpIn signUpIn) throws IOException {
         Gson gson = new Gson();
 
-        RequestBody body = RequestBody.create(gson.toJson(signIn).getBytes());
+        RequestBody body = RequestBody.create(gson.toJson(signUpIn).getBytes());
         Request request = new Request.Builder()
                 .url("http://127.0.0.1:8080/api/auth/signin")
                 .post(body)

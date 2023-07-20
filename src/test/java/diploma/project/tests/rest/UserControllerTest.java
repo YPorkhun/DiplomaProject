@@ -4,11 +4,21 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 
 public class UserControllerTest {
-    @Test
-    public void UserTest () throws IOException {
-        UserController userController = new UserController();
+    UserController userController = new UserController();
+
+    @Test ( description = "Get user and get user by id test",
+            priority = 10,
+            dependsOnGroups = {"login"}
+    )
+    public void GetUserTest () throws IOException {
         userController.getUser();
         userController.getUserById(1);
+    }
+    @Test ( description = "Update user test",
+            priority = 20,
+            dependsOnGroups = {"login"}
+    )
+    public void UserUpdateTest () throws IOException {
         userController.postUserUpdate();
     }
 }

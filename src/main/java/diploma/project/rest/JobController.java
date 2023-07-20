@@ -8,12 +8,13 @@ import okhttp3.Response;
 import java.io.IOException;
 
 public class JobController {
+
     public void postJobCreate (Job job) throws IOException {
         Gson gson = new Gson();
 
         RequestBody body = RequestBody.create(gson.toJson(job).getBytes());
         Request request = new Request.Builder()
-                .url("http://127.0.0.1:8080/api/job/create")
+                .url("https://freelance.lsrv.in.ua/api/job/create")
                 .post(body)
                 .header("Content-Type", "application/json")
                 .build();
@@ -22,10 +23,13 @@ public class JobController {
         System.out.println(response.code());
         System.out.println(response.body().string());
     }
-    public void postJobDeleteByJobId (String id ) throws IOException {
+    public void postJobDeleteByJobId (Job job, String id ) throws IOException {
+        Gson gson = new Gson();
+
+        RequestBody body = RequestBody.create(gson.toJson(job).getBytes());
         Request request = new Request.Builder()
-                .url("http://127.0.0.1:8080/api/job/delete/" + id)
-                .delete()
+                .url("https://freelance.lsrv.in.ua/api/job/delete/" + id)
+                .post(body)
                 .build();
         OkHttpClient client = new OkHttpClient();
         Response response = client.newCall(request).execute();
@@ -34,7 +38,7 @@ public class JobController {
     }
     public void getJobById (String id) throws IOException {
         Request request = new Request.Builder()
-                .url("http://127.0.0.1:8080/api/job/" + id)
+                .url("https://freelance.lsrv.in.ua/api/job/" + id)
                 .get()
                 .build();
         OkHttpClient client = new OkHttpClient();
@@ -44,7 +48,7 @@ public class JobController {
     }
     public void getJobUserJobs () throws IOException {
         Request request = new Request.Builder()
-                .url("http://127.0.0.1:8080/api/job/user/jobs" )
+                .url("https://freelance.lsrv.in.ua/api/job/user/jobs" )
                 .get()
                 .build();
         OkHttpClient client = new OkHttpClient();
@@ -54,7 +58,7 @@ public class JobController {
     }
     public void getJobAll () throws IOException {
         Request request = new Request.Builder()
-                .url("http://127.0.0.1:8080/api/job/all" )
+                .url("https://freelance.lsrv.in.ua/api/job/all" )
                 .get()
                 .build();
         OkHttpClient client = new OkHttpClient();

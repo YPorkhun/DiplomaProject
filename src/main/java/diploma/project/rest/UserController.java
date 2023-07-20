@@ -10,7 +10,7 @@ public class UserController {
 
     public void getUser() throws IOException {
         Request request = new Request.Builder()
-                .url("http://127.0.0.1:8080/api/user/")
+                .url("https://freelance.lsrv.in.ua/api/user/")
                 .get()
                 .build();
         OkHttpClient client = new OkHttpClient();
@@ -20,7 +20,7 @@ public class UserController {
     }
     public void getUserById (int id) throws IOException {
         Request request = new Request.Builder()
-                .url("http://127.0.0.1:8080/api/user/" + id )
+                .url("https://freelance.lsrv.in.ua/api/user/" + id )
                 .get()
                 .build();
         OkHttpClient client = new OkHttpClient();
@@ -38,7 +38,7 @@ public class UserController {
 
         RequestBody body = RequestBody.create(json.toString().getBytes());
         Request request = new Request.Builder()
-                .url("http://127.0.0.1:8080/api/user/update/")
+                .url("https://freelance.lsrv.in.ua/api/user/update")
                 .post(body)
                 .header("Content-Type", "application/json")
                 .build();

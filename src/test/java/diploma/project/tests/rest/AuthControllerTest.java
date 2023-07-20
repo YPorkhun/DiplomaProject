@@ -5,17 +5,31 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 
 public class AuthControllerTest {
-    @Test (description = "",
-    priority = 10)
-    public void SignUpTest() throws IOException {
-        SignUpIn signUpIn = new SignUpIn();
-        signUpIn.setUsername("yuliiap");
-        signUpIn.setPassword("test");
-        signUpIn.setConfirmPassword("test");
+    AuthController authController = new AuthController();
 
-        AuthController authController = new AuthController();
-        authController.postSignUp(signUpIn);
-        authController.postSignIn(signUpIn);
+    @Test (description = "Sign up test",
+    priority = 20,
+    groups = {"login"})
+
+    public void SignUpTest() throws IOException {
+        SignUpIn signUp = new SignUpIn();
+        signUp.setUsername("yuliiap");
+        signUp.setPassword("2147483647");
+        signUp.setConfirmPassword("2147483647");
+
+        authController.postSignUp(signUp);
+
+    }
+    @Test (description = "Sign in test",
+            priority = 10,
+            groups = {"login"})
+
+    public void SignInTest() throws IOException {
+        SignUpIn signIn = new SignUpIn();
+        signIn.setUsername("yuliiap");
+        signIn.setPassword("2147483647");
+
+        authController.postSignIn(signIn);
 
     }
 }

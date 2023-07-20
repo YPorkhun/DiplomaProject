@@ -3,10 +3,10 @@ import lombok.Data;
 
 @Data
 public class Job {
-    private Integer id;
-    private String title;
-    private String description;
-    private Integer price;
-    private String user;
-    private Integer noOfComments;
+    public Integer id;
+    public String title;
+    public String description;
+    public Integer price;
+    public String user;
+    public Integer noOfComments;
 }

@@ -5,21 +5,47 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 
 public class JobControllerTest {
-    @Test
-    public void JobTest () throws IOException {
-        Job job = new Job();
-        job.setId(4);
-        job.setTitle("Some title");
-        job.setDescription("Some interesting description");
-        job.setPrice(100000);
-        job.setUser("yuliiap");
-        job.setNoOfComments(7);
+    JobController jobController = new JobController();
 
-        JobController jobController = new JobController();
-        jobController.postJobCreate(job);
-        jobController.postJobDeleteByJobId("1");
-        jobController.getJobById("3");
-        jobController.getJobUserJobs();
-        jobController.getJobAll();
+        @Test(description = "Create job test",
+                priority = 10,
+                dependsOnGroups = {"login"}
+        )
+        public void CreateJobTest () throws IOException {
+            Job job = new Job();
+            job.setId(1);
+            job.setTitle("Some title");
+            job.setDescription("Some interesting description");
+            job.setPrice(100000);
+            job.setUser("yuliiap");
+            job.setNoOfComments(1);
+
+            jobController.postJobCreate(job);
+        }
+
+        @Test(description = "Delete job test",
+                priority = 10,
+                dependsOnGroups = {"login"}
+        )
+        public void DeleteJobTest () throws IOException {
+            Job job = new Job();
+            job.setId(1);
+            job.setTitle("Some title");
+            job.setDescription("Some interesting description");
+            job.setPrice(100000);
+            job.setUser("yuliiap");
+            job.setNoOfComments(1);
+
+            jobController.postJobDeleteByJobId(job, "1");
+
+        }
+        @Test(description = "Get job by id, get user's job, get all job tests",
+                priority = 10,
+                dependsOnGroups = {"login"}
+        )
+        public void GetJobTest () throws IOException {
+            jobController.getJobById("1");
+            jobController.getJobUserJobs();
+            jobController.getJobAll();
+        }
     }
-}

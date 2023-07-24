@@ -1,9 +1,37 @@
 package diploma.project.wd;
-
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class RegistrationPage extends BasePage {
-    public RegistrationPage (WebDriver driver)
-    {super(driver);}
+    @FindBy(xpath = "//input[@formcontrolname='username']")
+    private WebElement usernameLocator;
+    @FindBy (xpath = "//input[@formcontrolname='name']")
+    private WebElement nameLocator;
+    @FindBy (xpath = "//input[@formcontrolname='lastname']")
+    private WebElement lastnameLocator;
+    @FindBy (xpath = "//input[@formcontrolname='password']")
+    private WebElement passwordLocator;
+    @FindBy (xpath = "//input[@formcontrolname='confirmPassword']")
+    private WebElement confirmPassLocator;
+    @FindBy (xpath = "//span[@class='mat-button-wrapper']")
+    private WebElement registerButton;
+
+    public RegistrationPage (WebDriver driver){super(driver);
+        PageFactory.initElements(driver, this);
+    }
+
+    public RegistrationPage setUserName (String username) {
+        usernameLocator.clear();
+        usernameLocator.sendKeys(username);
+        return this;
+    }
+
+    public RegistrationPage setName (String name) {
+        nameLocator.clear();
+        nameLocator.sendKeys(name);
+        return this;
+    }
 
 }

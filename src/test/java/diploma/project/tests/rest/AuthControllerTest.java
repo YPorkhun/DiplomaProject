@@ -8,7 +8,7 @@ public class AuthControllerTest {
     AuthController authController = new AuthController();
 
     @Test (description = "Sign up test",
-    priority = 20,
+    priority = 10,
     groups = {"login"})
 
     public void SignUpTest() throws IOException {
@@ -21,7 +21,7 @@ public class AuthControllerTest {
 
     }
     @Test (description = "Sign in test",
-            priority = 10,
+            priority = 20,
             groups = {"login"})
 
     public void SignInTest() throws IOException {

@@ -14,11 +14,11 @@ public class WelcomePage extends BasePage  {
         super(driver);
         PageFactory.initElements(driver, this);
     }
-    public LoginPage clickLogIn () {
+    public LoginPage clickLogInButton () {
         clickButton(loginLocator);
         return new LoginPage(driver);
     }
-    public RegistrationPage clickCreateAccount() {
+    public RegistrationPage clickCreateAccountButton() {
         clickButton(createAccountLocator);
         return new RegistrationPage(driver);
     }

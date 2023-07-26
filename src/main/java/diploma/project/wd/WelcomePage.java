@@ -5,9 +5,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class WelcomePage extends BasePage  {
-    @FindBy(linkText = "/login")
+    @FindBy(xpath = "//a[@href='/login']")
     private WebElement loginLocator;
-    @FindBy(linkText = "/register")
+    @FindBy(xpath = "//a[@href='/register']")
     private WebElement createAccountLocator;
 
     public WelcomePage (WebDriver driver) {

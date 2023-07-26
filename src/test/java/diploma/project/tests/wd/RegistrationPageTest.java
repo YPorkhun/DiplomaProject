@@ -10,10 +10,10 @@ public class RegistrationPageTest extends BasePageTest {
         RegistrationPage registrationPage = new RegistrationPage(driver);
         registrationPage.setUserName("yuliiap");
         registrationPage.setName("Yuliia");
-        registrationPage.setLastname("Porkhub");
+        registrationPage.setLastname("Porkhun");
         registrationPage.setPasswordAndConfirm("yuliiap");
         registrationPage.clickOnRegisterButton();
-
+        registrationPage.clickOnSignInButton();
 
     }
 }

@@ -18,6 +18,9 @@ public class RegistrationPage extends BasePage {
     @FindBy(xpath = "//span[@class='mat-button-wrapper']")
     private WebElement registerButton;
 
+    @FindBy(xpath = "//a[@href='/login']")
+    private WebElement signInButton;
+
     public RegistrationPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
@@ -53,4 +56,9 @@ public class RegistrationPage extends BasePage {
         clickButton(registerButton);
         return this;
     }
+    public LoginPage clickOnSignInButton() {
+        clickButton(signInButton);
+        return new LoginPage (driver);
+    }
+
 }

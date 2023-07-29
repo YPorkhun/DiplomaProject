@@ -12,6 +12,8 @@ public class LoginPage extends BasePage {
     private WebElement passwordLocator;
     @FindBy (className = "mat-button-wrapper")
     private WebElement logInButtonLocator;
+    @FindBy (tagName = "h2")
+    private WebElement loginHeader;
 
     public LoginPage (WebDriver driver){super(driver);
         PageFactory.initElements(driver, this);
@@ -29,5 +31,9 @@ public class LoginPage extends BasePage {
     public LoginPage clickOnLoginButton() {
         clickButton(logInButtonLocator);
         return this;
+    }
+
+    public String getTitle () {
+      return loginHeader.getText();
     }
 }

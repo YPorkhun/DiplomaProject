@@ -3,8 +3,8 @@ import lombok.Data;
 
 @Data
 public class SignUpIn {
-    private String username = "yuliiap";
-    private String password = "2147483647";
+    private String username ;
+    private String password;
     private String confirmPassword;
 
 }

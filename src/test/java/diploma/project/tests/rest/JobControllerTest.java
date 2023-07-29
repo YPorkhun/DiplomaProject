@@ -8,9 +8,7 @@ public class JobControllerTest {
     JobController jobController = new JobController();
 
         @Test(description = "Create job test",
-                priority = 10,
-                dependsOnGroups = {"login"}
-        )
+                priority = 10)
         public void CreateJobTest () throws IOException {
             Job job = new Job();
             job.setId(1);
@@ -24,12 +22,10 @@ public class JobControllerTest {
         }
 
         @Test(description = "Delete job test",
-                priority = 10,
-                dependsOnGroups = {"login"}
-        )
+                priority = 10)
         public void DeleteJobTest () throws IOException {
             Job job = new Job();
-            job.setId(1);
+            job.setId(79);
             job.setTitle("Some title");
             job.setDescription("Some interesting description");
             job.setPrice(100000);
@@ -40,9 +36,7 @@ public class JobControllerTest {
 
         }
         @Test(description = "Get job by id, get user's job, get all job tests",
-                priority = 10,
-                dependsOnGroups = {"login"}
-        )
+                priority = 10)
         public void GetJobTest () throws IOException {
             jobController.getJobById("1");
             jobController.getJobUserJobs();

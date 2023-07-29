@@ -21,6 +21,9 @@ public class RegistrationPage extends BasePage {
     @FindBy(xpath = "//a[@href='/login']")
     private WebElement signInButton;
 
+    @FindBy(tagName = "h2")
+    private WebElement registrationHeader;
+
     public RegistrationPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
@@ -59,6 +62,10 @@ public class RegistrationPage extends BasePage {
     public LoginPage clickOnSignInButton() {
         clickButton(signInButton);
         return new LoginPage (driver);
+    }
+
+    public String getTitle () {
+        return registrationHeader.getText();
     }
 
 }

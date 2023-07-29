@@ -13,9 +13,9 @@ public class AuthControllerTest {
 
     public void SignUpTest() throws IOException {
         SignUpIn signUp = new SignUpIn();
-        signUp.setUsername("yuliiap");
-        signUp.setPassword("2147483647");
-        signUp.setConfirmPassword("2147483647");
+        signUp.setUsername("yuliiaP");
+        signUp.setPassword("yuliiap12345");
+        signUp.setConfirmPassword("yuliiap12345");
 
         authController.postSignUp(signUp);
 
@@ -26,8 +26,8 @@ public class AuthControllerTest {
 
     public void SignInTest() throws IOException {
         SignUpIn signIn = new SignUpIn();
-        signIn.setUsername("yuliiap");
-        signIn.setPassword("2147483647");
+        signIn.setUsername("yuliiaP");
+        signIn.setPassword("yuliiap12345");
 
         authController.postSignIn(signIn);
 

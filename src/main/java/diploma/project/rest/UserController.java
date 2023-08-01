@@ -6,9 +6,7 @@ import okhttp3.Response;
 import org.json.JSONObject;
 import java.io.IOException;
 
-public class UserController {
-    public static String token = "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyNiIsIm5hbWUiOm51bGwsImlkIjoiMjYiLCJ1c2VybmFtZSI6Inl1bGlpYVAiLCJsYXN0bmFtZSI6bnVsbCwiaWF0IjoxNjkwNjU3MjcxLCJleHAiOjE2OTA2NjA4NzF9.RNJyqhC50aJm5lTZb-5Zrc3a2xLpjqEydsnUpXq0NbLRDdzOPiGL2PiYR3jZoK--09Pesl69_KMHCB9ftEULDw";
-
+public class UserController extends AuthController {
     public void getUser() throws IOException {
         Request request = new Request.Builder()
                 .url("https://freelance.lsrv.in.ua/api/user/")
@@ -35,9 +33,9 @@ public class UserController {
     public void postUserUpdate() throws IOException {
         JSONObject json = new JSONObject();
         json.put("id", 1);
-        json.put("username", "yuliiaP");
-        json.put("name", "Yuliia");
-        json.put("lastname", "Porkhun");
+        json.put("username", "UserName");
+        json.put("name", "User");
+        json.put("lastname", "SomeLastName");
 
         RequestBody body = RequestBody.create(json.toString().getBytes());
         Request request = new Request.Builder()

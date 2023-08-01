@@ -8,9 +8,7 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 import java.io.IOException;
 
-public class CommentController {
-
-    public static String token = "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyNiIsIm5hbWUiOm51bGwsImlkIjoiMjYiLCJ1c2VybmFtZSI6Inl1bGlpYVAiLCJsYXN0bmFtZSI6bnVsbCwiaWF0IjoxNjkwNjU3MjcxLCJleHAiOjE2OTA2NjA4NzF9.RNJyqhC50aJm5lTZb-5Zrc3a2xLpjqEydsnUpXq0NbLRDdzOPiGL2PiYR3jZoK--09Pesl69_KMHCB9ftEULDw";
+public class CommentController extends AuthController {
 
     public void postCreateCommentByJobId (Comment comment, String id) throws IOException {
         Gson gson = new Gson();

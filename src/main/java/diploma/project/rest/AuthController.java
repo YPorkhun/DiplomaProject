@@ -8,6 +8,8 @@ import okhttp3.Response;
 import java.io.IOException;
 
 public class AuthController {
+    protected String token = "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMSIsIm5hbWUiOm51bGwsImlkIjoiMjEiLCJ1c2VybmFtZSI6Inl1bGlpYVAiLCJsYXN0bmFtZSI6bnVsbCwiaWF0IjoxNjkwNzAzMjk4LCJleHAiOjE2OTA3MDY4OTh9.irqseErXlYboiJQGYS1SgAStKywt22zApgOPOlRjFihl4FaJzzT8Bda1wBZ6B8VzFrMQ3_kn5CAbWvRTwtt4Zg";
+
     public void postSignUp (SignUpIn signUp) throws IOException {
         Gson gson = new Gson();
 

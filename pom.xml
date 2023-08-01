@@ -18,7 +18,7 @@
         <maven-surefire-plugin.version>3.1.0</maven-surefire-plugin.version>
         <selenium.version>4.9.1</selenium.version>
         <wd.version>5.3.3</wd.version>
-        <selenide.version>6.15.0</selenide.version>
+        <selenide.version>6.16.1 </selenide.version>
         <okhttp.version>4.11.0</okhttp.version>
         <json.version>20230618</json.version>
         <gson.version>2.10.1</gson.version>

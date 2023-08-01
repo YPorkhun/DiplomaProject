@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 public class WelcomePageTest extends BasePageTest {
 
-    @Test (groups = {"login"})
+    @Test
     public void WelcomeLoginTest () {
         WelcomePage welcomePage = new WelcomePage (driver);
 
@@ -17,7 +17,7 @@ public class WelcomePageTest extends BasePageTest {
         Assert.assertEquals(loginPage.getTitle(),"Login");
     }
 
-    @Test(groups = {"create_account"})
+    @Test
     public void WelcomeCreateAccountTest () {
         WelcomePage welcomePage = new WelcomePage (driver);
 

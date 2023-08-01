@@ -1,10 +1,9 @@
 package diploma.project.tests.wd;
 import diploma.project.wd.RegistrationPage;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
 public class RegistrationPageTest extends BasePageTest {
-    @Test (dependsOnGroups = {"create_account"})
+    @Test
     public void RegistrationTest(){
         driver.get("https://freelance.lsrv.in.ua/register");
 
@@ -14,8 +13,6 @@ public class RegistrationPageTest extends BasePageTest {
         registrationPage.setLastname("Porkhun");
         registrationPage.setPasswordAndConfirm("yuliiap12345");
         registrationPage.clickOnRegisterButton();
-
-
 
         registrationPage.clickOnSignInButton();
 

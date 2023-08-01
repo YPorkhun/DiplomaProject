@@ -4,6 +4,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class LoginPage extends BasePage {
     @FindBy(id = "mat-input-0")
@@ -18,6 +21,7 @@ public class LoginPage extends BasePage {
     public LoginPage (WebDriver driver){super(driver);
         PageFactory.initElements(driver, this);
     }
+
     public LoginPage setUserName(String username) {
         usernameLocator.clear();
         usernameLocator.sendKeys(username);
@@ -28,11 +32,10 @@ public class LoginPage extends BasePage {
         passwordLocator.sendKeys(password);
         return this;
     }
-    public LoginPage clickOnLoginButton() {
+    public MainPage clickOnLoginButton() {
         clickButton(logInButtonLocator);
-        return this;
+        return new MainPage(driver);
     }
-
     public String getTitle () {
       return loginHeader.getText();
     }

@@ -1,6 +1,6 @@
 package diploma.project.wd;
+import diploma.project.rest.entities.CreateJobMenu;
 import diploma.project.rest.entities.EditInfoDialogMenu;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,6 +21,8 @@ public class ProfilePage extends BasePage {
     private WebElement profileIconLocator;
     @FindBy (xpath =  "//span[@class='mat-button-wrapper'] [contains(text(),'Edit Info')]")
     private WebElement editInfoButton;
+    @FindBy (xpath =  "//button[@routerlink='/profile/add-job']")
+    private WebElement addJobButton;
 
     public ProfilePage(WebDriver driver) {
         super(driver);
@@ -56,5 +58,10 @@ public class ProfilePage extends BasePage {
             }
         }
         return new WelcomePage(driver);
+    }
+    public ProfilePage clickOnAddJobButton () {
+        clickButton(addJobButton);
+        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//app-add-job[@class='ng-star-inserted']//h2")));
+        return new CreateJobMenu(driver);
     }
 }

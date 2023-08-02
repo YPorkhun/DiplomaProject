@@ -11,7 +11,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Base64;
 
-
 public class CustomExtentReportsListener extends ExtentITestListenerClassAdapter {
     static {
         System.setProperty("extent.reporter.html.start", "true");

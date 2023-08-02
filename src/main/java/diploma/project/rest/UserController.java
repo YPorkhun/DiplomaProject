@@ -33,9 +33,9 @@ public class UserController extends AuthController {
     public void postUserUpdate() throws IOException {
         JSONObject json = new JSONObject();
         json.put("id", 1);
-        json.put("username", "UserName");
-        json.put("name", "User");
-        json.put("lastname", "SomeLastName");
+        json.put("username", "yuliiaP");
+        json.put("name", "New_User");
+        json.put("lastname", "New_LastName");
 
         RequestBody body = RequestBody.create(json.toString().getBytes());
         Request request = new Request.Builder()

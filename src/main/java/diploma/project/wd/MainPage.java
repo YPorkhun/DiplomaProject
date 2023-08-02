@@ -1,4 +1,5 @@
 package diploma.project.wd;
+import diploma.project.rest.entities.CommentMenu;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,6 +13,9 @@ import java.util.List;
 public class MainPage extends BasePage {
     @FindBy(tagName = "mat-icon")
     private WebElement profileIconLocator;
+
+    @FindBy (xpath = "/html/body/app-root/div/app-index/div/mat-card[1]/mat-card-actions/button/span[1]")
+    private WebElement commendCardButton;
 
     public MainPage (WebDriver driver) {
         super(driver);
@@ -34,5 +38,10 @@ public class MainPage extends BasePage {
             }
         }
         return new ProfilePage(driver);
+    }
+
+    public MainPage clickOnViewInfoButton () {
+        clickButton(commendCardButton);
+        return  new CommentMenu(driver);
     }
 }

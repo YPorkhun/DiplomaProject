@@ -32,4 +32,21 @@ public class ProfilePageTest extends BasePageTest {
 
         Assert.assertEquals(createJobMenu.getHeaderOfJobCard(),"Hello world!");
 }
+
+    @Test(priority = 20)
+    public void LoginAndCheckCommentAndDeleteThem() {
+        driver.get("https://freelance.lsrv.in.ua/login");
+
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.setUserName("yuliiaP");
+        loginPage.setPassword("yuliiap12345");
+        loginPage.clickOnLoginButton();
+
+        MainPage mainPage = new MainPage(driver);
+        mainPage.clickOnProfileIconAndNavigateProfilePage();
+
+        ProfilePage profilePage = new ProfilePage(driver);
+        Assert.assertEquals(profilePage.getHeader(),"Profile");
+        profilePage.clickOnRemoveButton();
+    }
 }

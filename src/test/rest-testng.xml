@@ -1,8 +1,0 @@
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="Diploma project by Yuliia Porkhun" verbose="1" >
-    <test name="API tests" >
-        <packages>
-            <package name="diploma.project.tests.rest"/>
-        </packages>
-    </test>
-</suite>

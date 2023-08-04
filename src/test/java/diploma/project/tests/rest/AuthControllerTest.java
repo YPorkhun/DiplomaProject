@@ -1,35 +1,26 @@
 package diploma.project.tests.rest;
+import com.beust.ah.A;
 import diploma.project.rest.AuthController;
-import diploma.project.rest.entities.SignUpIn;
+import diploma.project.rest.entities.Auth;
+import okhttp3.Response;
+import org.apache.commons.lang3.StringUtils;
+import org.testng.Assert;
 import org.testng.annotations.Test;
+
 import java.io.IOException;
 
-public class AuthControllerTest {
+public class AuthControllerTest extends BaseTest {
     AuthController authController = new AuthController();
-
-    @Test (description = "Sign up test",
-    priority = 10,
-    groups = {"login"})
-
-    public void SignUpTest() throws IOException {
-        SignUpIn signUp = new SignUpIn();
-        signUp.setUsername("yuliiaP");
-        signUp.setPassword("yuliiap12345");
-        signUp.setConfirmPassword("yuliiap12345");
-
-        authController.postSignUp(signUp);
-
+    @Test(priority = 10)
+    public void SingInTest() throws IOException {
+        System.out.println(auth.getToken());
+        Assert.assertTrue(StringUtils.isNotEmpty(auth.getToken()), "Token is presented");
     }
-    @Test (description = "Sign in test",
-            priority = 20,
-            groups = {"login"})
 
-    public void SignInTest() throws IOException {
-        SignUpIn signIn = new SignUpIn();
-        signIn.setUsername("yuliiaP");
-        signIn.setPassword("yuliiap12345");
-
-        authController.postSignIn(signIn);
+    @Test(priority = 11)
+    public void SingUpTest() throws IOException {
+        Auth authorization = new Auth("yuliiaP", "blablabla12345password");
+        authController.postSignUp(authorization,"blablabla12345password");
 
     }
 }

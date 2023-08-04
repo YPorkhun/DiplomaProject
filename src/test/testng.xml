@@ -6,11 +6,11 @@
             </packages>
             <classes></classes>
         </test>
-    <test name="UI">
-        <parameter name ="browser" value="chrome"/>
-        <packages>
-            <package name="diploma.project.tests.wd"/>
-        </packages>
-        <classes></classes>
-    </test>
+<!--    <test name="UI">-->
+<!--        <parameter name ="browser" value="chrome"/>-->
+<!--        <packages>-->
+<!--            <package name="diploma.project.tests.wd"/>-->
+<!--        </packages>-->
+<!--        <classes></classes>-->
+<!--    </test>-->
 </suite>

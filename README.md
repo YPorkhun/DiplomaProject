@@ -1,10 +1,9 @@
 # DiplomaProject
 **Написати тести для ендпоінтів API**:
+- auth-controlleruser-controller
+- job-controller
+- сomment-controller
 
-auth-controller
-user-controller
-job-controller
-сomment-controller
 Для API тестів можна використати будь-який http-client.
 
 **Написати UI-тести для Registration и Login**

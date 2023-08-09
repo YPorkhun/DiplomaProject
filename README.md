@@ -1,6 +1,7 @@
 # DiplomaProject
 **Написати тести для ендпоінтів API**:
-- auth-controlleruser-controller
+- auth-controller
+- user-controller
 - job-controller
 - сomment-controller
 
